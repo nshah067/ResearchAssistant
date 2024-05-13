@@ -54,6 +54,6 @@ if prompt := st.chat_input("Start Chatting", key=f"{id}"):
             num = i + 1
             citation += f"{num}: Page {source.metadata['page_label']} in {source.metadata['file_name']}  \n"
         reply = reply.replace("assistant: ", "")
-        template = f"{reply}  \nSources:  \n{citation}  \n"
-        response = st.write(template)
+        response = f"{reply}  \nSources:  \n{citation}  \n"
+        st.write(response)
     st.session_state.messages.append({"role": "assistant", "content": response})
