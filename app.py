@@ -3,24 +3,24 @@ from modules import *
 from utils import download_pdf
 
 urls = [
-    "https://openreview.net/pdf?id=hSyW5go0v8",
-    "https://openreview.net/pdf?id=9WD9KwssyT",
-    "https://openreview.net/pdf?id=VTF8yNQM66",
+    "",
+    "",
+    "",
 ]
 
 papers = [
-    "selfrag",
-    "zipformer",
-    "swebench",
+    "timegpt",
+    "moment",
+    "ttm",
 ]
 
 st.title("AI Powered Research Assistant")
 s = True
 with st.form("Research Materials"):
     st.write("To start, enter 3 research papers along with a url.  \nWhen you are done, press 'Retrieve Materials'")
-    i1 = st.text_input("Format: [paper name, paper url]", value="selfrag, https://openreview.net/pdf?id=hSyW5go0v8").split(",")
-    i2 = st.text_input("Format: [paper name, paper url]", value="zipformer, https://openreview.net/pdf?id=9WD9KwssyT").split(",")
-    i3 = st.text_input("Format: [paper name, paper url]", value="swebench, https://openreview.net/pdf?id=VTF8yNQM66",).split(",")
+    i1 = st.text_input("Format: [paper name, paper url]", value="timegpt, https://arxiv.org/pdf/2310.03589").split(",")
+    i2 = st.text_input("Format: [paper name, paper url]", value="moment, https://arxiv.org/pdf/2402.03885").split(",")
+    i3 = st.text_input("Format: [paper name, paper url]", value="ttm, https://arxiv.org/pdf/2401.03955",).split(",")
     s = st.form_submit_button("Retrieve Materials")
     if s:
         papers[0], urls[0] = i1[0], i1[1]
